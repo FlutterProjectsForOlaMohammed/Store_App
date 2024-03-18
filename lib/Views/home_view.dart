@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:storeapp/Components/home_view_body.dart';
 import 'package:storeapp/constants.dart';
+import 'package:storeapp/cubits/ProductCubit/products_cubit.dart';
 import 'add_new_product_view.dart';
 
 class HomePage extends StatelessWidget {
@@ -41,7 +43,10 @@ class HomePage extends StatelessWidget {
               ))
         ],
       ),
-      body: const HomeViewBody(),
+      body: BlocProvider(
+        create: (context) => ProductsCubit(),
+        child: const HomeViewBody(),
+      ),
     );
   }
 }
