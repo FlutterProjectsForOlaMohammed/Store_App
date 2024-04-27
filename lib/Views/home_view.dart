@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:storeapp/Components/home_view_body.dart';
+import 'package:storeapp/Views/favorite_products_view.dart';
 import 'package:storeapp/constants.dart';
 import 'package:storeapp/cubits/ProductCubit/products_cubit.dart';
 import 'add_new_product_view.dart';
@@ -17,13 +18,27 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         elevation: 0,
         backgroundColor: Colors.white,
-        leading: IconButton(
-          onPressed: () {
-            Navigator.pushNamed(context, AddNewOne.id);
-          },
-          icon: const Icon(
-            Icons.add,
-            color: Colors.black,
+        leading: Padding(
+          padding: const EdgeInsets.only(left: 8),
+          child: CircleAvatar(
+            radius: 28,
+            backgroundColor: const Color.fromARGB(255, 218, 217, 217),
+            child: IconButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) {
+                        return FavoriteProductsView(
+                            product: favoriteProductsList);
+                      },
+                    ),
+                  );
+                },
+                icon: Icon(
+                  Icons.favorite,
+                  color: Colors.red[900],
+                )),
           ),
         ),
         title: const Text(

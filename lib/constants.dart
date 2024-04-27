@@ -1,8 +1,7 @@
-import 'dart:ui';
+import 'package:flutter/material.dart';
 
 List<String> categoriesList = [
   'all',
-  'electronics',
   'jewelery',
   'men\'s clothing',
   'women\'s clothing'

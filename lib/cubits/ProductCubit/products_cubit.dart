@@ -32,4 +32,8 @@ class ProductsCubit extends Cubit<ProductsState> {
       emit(ProductsFailure(errMessage: e.toString()));
     }
   }
+
+  void refreshProducts() {
+    emit(RefreshProductsState());
+  }
 }

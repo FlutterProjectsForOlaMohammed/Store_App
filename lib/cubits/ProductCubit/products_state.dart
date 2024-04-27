@@ -12,6 +12,8 @@ final class ProductsSuccess extends ProductsState {
   ProductsSuccess({required this.productsList});
 }
 
+final class RefreshProductsState extends ProductsState {}
+
 final class ProductsFailure extends ProductsState {
   final String errMessage;
 
