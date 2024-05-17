@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:storeapp/Components/product_card.dart';
+import 'package:storeapp/Components/favorite_product_card.dart';
 import 'package:storeapp/Models/product_model.dart';
 import 'package:storeapp/constants.dart';
 import 'package:storeapp/cubit/ProductCubit/products_cubit.dart';

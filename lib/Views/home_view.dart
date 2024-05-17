@@ -5,7 +5,9 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:storeapp/Components/home_view_body.dart';
 import 'package:storeapp/Models/user_data.dart';
 import 'package:storeapp/Views/favorite_products_view.dart';
+import 'package:storeapp/Views/new_products_view.dart';
 import 'package:storeapp/Views/payment_view.dart';
+import 'package:storeapp/Views/profile_view.dart';
 import 'package:storeapp/constants.dart';
 import 'package:storeapp/cubit/ProductCubit/products_cubit.dart';
 
@@ -23,7 +25,7 @@ class HomePage extends StatelessWidget {
         leading: Padding(
           padding: const EdgeInsets.only(left: 8),
           child: CircleAvatar(
-            radius: 28,
+            radius: 19,
             backgroundColor: const Color.fromARGB(255, 218, 217, 217),
             child: IconButton(
                 onPressed: () {
@@ -66,6 +68,47 @@ class HomePage extends StatelessWidget {
               icon: const Icon(
                 FontAwesomeIcons.cartPlus,
                 color: Colors.black,
+              )),
+          IconButton(
+            onPressed: () {
+              Navigator.push(
+                context,
+                CupertinoDialogRoute(
+                    builder: (context) {
+                      return ProfileView(user: user);
+                    },
+                    context: context),
+              );
+            },
+            icon: CircleAvatar(
+              backgroundColor: Colors.grey[300],
+              radius: 28,
+              child: const Icon(
+                Icons.person_2,
+                size: 35,
+                color: Colors.black,
+              ),
+            ),
+          ),
+          IconButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  CupertinoDialogRoute(
+                      builder: (context) {
+                        return NewProductsView();
+                      },
+                      context: context),
+                );
+              },
+              icon: CircleAvatar(
+                backgroundColor: Colors.grey[300],
+                radius: 24,
+                child: const Icon(
+                  Icons.new_releases_outlined,
+                  size: 32,
+                  color: Colors.black,
+                ),
               ))
         ],
       ),

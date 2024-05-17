@@ -11,6 +11,15 @@ List<String> categoriesList = [
   'men\'s clothing',
   'women\'s clothing'
 ];
+
+List<String> languages = ['AR', 'EN', 'IT', 'TR', 'HI', 'FR'];
+//  AR - Arabic
+//  EN	English
+//  IT	Italian
+//  TR	Turkish
+//  HI	Hindi
+//  FR	French
+
 const kPrimaryColor = Color.fromARGB(255, 105, 157, 159);
 
 String? passwordValidation(String value) {
