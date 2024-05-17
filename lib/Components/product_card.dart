@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:storeapp/Models/product_model.dart';
 import 'package:storeapp/Views/favorite_products_view.dart';
-import 'package:storeapp/Views/update_product_view.dart';
-import 'package:storeapp/cubits/ProductCubit/products_cubit.dart';
+import 'package:storeapp/Views/product_details_view.dart';
+import 'package:storeapp/cubit/ProductCubit/products_cubit.dart';
 
 class ProductCard extends StatefulWidget {
   const ProductCard({super.key, required this.product});
@@ -21,7 +21,7 @@ class _ProductCardState extends State<ProductCard> {
       padding: const EdgeInsets.all(8.0),
       child: GestureDetector(
         onTap: () {
-          Navigator.pushNamed(context, UpdateProduct.id,
+          Navigator.pushNamed(context, ProductDetailsView.id,
               arguments: widget.product);
         },
         child: Stack(clipBehavior: Clip.none, children: [
@@ -162,6 +162,5 @@ class FavoriteProductCard extends StatelessWidget {
         )
       ]),
     );
-    ;
   }
 }

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:storeapp/Components/drop_box.dart';
 import 'package:storeapp/Components/show_grid_cards.dart';
-import 'package:storeapp/cubits/ProductCubit/products_cubit.dart';
+import 'package:storeapp/cubit/ProductCubit/products_cubit.dart';
 
 class HomeViewBody extends StatefulWidget {
   const HomeViewBody({super.key});
